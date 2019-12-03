@@ -29,11 +29,11 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'pgcloudappi',
-      user: 'postgres',
-      password: 'postgres',
-      host: 'localhost',
-      port: 5432
+      database,
+      user,
+      password,
+      host,
+      port
     },
     pool: {
       min: 2,
