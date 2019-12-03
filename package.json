@@ -1,0 +1,46 @@
+{
+  "name": "cloudappi",
+  "version": "1.0.0",
+  "description": "Users API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r esm app.js",
+    "docs": "apidoc -i routes -o docs",
+    "deploy": "standard && knex migrate:latest && npm run docs && npm start",
+    "format": "standard --fix",
+    "lint": "standard",
+    "test": "ava"
+  },
+  "author": "Fasushka <fantoniosoto@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apidoc": "^0.18.0",
+    "esm": "^3.2.25",
+    "knex": "^0.20.3",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-compress": "^3.0.0",
+    "koa-helmet": "^5.2.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.6",
+    "log4js": "^6.1.0",
+    "pg": "^7.14.0"    
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "standard": "^14.3.1",
+    "supertest": "^4.0.2"
+  },
+  "standard": {
+    "ignore": [
+      "docs/",
+      "template/"
+    ]
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  }
+}
